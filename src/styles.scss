@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		--tw-bg-opacity: 1;
+		background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+
+		color: #222;
+		display: flex;
+		flex-direction: column;
+		font: 15px/1.6 "-apple-system", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+		margin: 0;
+		overflow-x: hidden;
+		padding: 0;
+		word-wrap: break-word;
+		max-width: 100%;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		-webkit-tap-highlight-color: transparent;
+		-webkit-text-size-adjust: 100%;
+		-webkit-font-smoothing: antialiased;
+		-webkit-overflow-scrolling: touch;
+	}
+}
+
+.rounded-tr-11xl {
+	border-top-right-radius: 5.5rem;
+}
+.hover-filter-white:hover > div {
+	filter: brightness(0) invert(1);
+}
+.filter-white {
+	filter: brightness(0) invert(1);
+}
+.filter-grayscale-100 {
+	filter: grayscale(100%);
+}
+.hover-filter-grayscale-0:hover > div {
+	filter: grayscale(0%);
+}
