@@ -5,11 +5,11 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
 import { HomeModule } from "./modules/home/home.module";
-import { LearningPointsComponent } from "./modules/learning-points/learning-points/learning-points.component";
+import { ExperiencePointsModule } from "./modules/experience-points/experience-points.module";
 
 @NgModule({
-	declarations: [AppComponent, LearningPointsComponent],
-	imports: [BrowserModule, AppRoutingModule, HomeModule],
+	declarations: [AppComponent],
+	imports: [BrowserModule, AppRoutingModule, HomeModule, ExperiencePointsModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })

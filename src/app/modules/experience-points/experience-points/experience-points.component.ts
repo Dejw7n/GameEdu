@@ -2,8 +2,8 @@ import { Component, OnInit } from "@angular/core";
 
 @Component({
 	selector: "app-learning-points",
-	templateUrl: "./learning-points.component.html",
-	styleUrls: ["./learning-points.component.scss"],
+	templateUrl: "./experience-points.component.html",
+	styleUrls: ["./experience-points.component.scss"],
 })
 export class LearningPointsComponent implements OnInit {
 	constructor() {}
@@ -28,6 +28,12 @@ export class LearningPointsComponent implements OnInit {
 			name: "Programování",
 			earnedPoints: 742,
 			lostPoints: 321,
+			nextLevel: 2000,
+		},
+		{
+			name: "Aplikační software",
+			earnedPoints: 1823,
+			lostPoints: 15,
 			nextLevel: 2000,
 		},
 	];

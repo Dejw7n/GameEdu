@@ -1,0 +1,71 @@
+<div class="mb-8">
+	<h1 class="text-3xl text-black font-bold">Výukové body</h1>
+</div>
+<div class="">
+	<div class="mb-4">
+		<h1 class="text-lg font-semibold">Seznam předmětů</h1>
+	</div>
+	<div class="grid gap-4">
+		<div *ngFor="let subject of subjects" class="rounded-tl-lg rounded-tr-8xl rounded-br-lg rounded-bl-lg bg-white">
+			<div class="p-4">
+				<div class="">
+					<div class="flex">
+						<div class="grid w-full">
+							<div class="">
+								<h1 class="text-xl font-semibold">{{ subject.name }}</h1>
+							</div>
+							<div class="mt-auto flex">
+								<div class="pl-2 border-l-2 border-l-blue-400">
+									<span class="text-sm text-gray-500">Získál si</span>
+									<div class="flex">
+										<span class="mt-auto text-2xl font-semibold leading-none tracking-wide">{{ subject.earnedPoints }}</span>
+										<span class="mt-auto ml-1 text-xs text-gray-600">bodů</span>
+									</div>
+								</div>
+								<div class="ml-auto pl-2 border-l-2 border-l-red-400">
+									<span class="text-sm text-gray-500">Ztratil si</span>
+									<div class="flex">
+										<span class="mt-auto text-2xl font-semibold leading-none tracking-wide">{{ subject.lostPoints }}</span>
+										<span class="mt-auto ml-1 text-xs text-gray-600">bodů</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="ml-auto grid">
+							<div class="relative my-auto">
+								<div class="absolute grid w-full h-full">
+									<div class="m-auto">
+										<h1 class="visual-counter text-2xl text-center text-blue-600 font-semibold leading-none tracking-wide" style="--visual-counter-minValue: {{ subject.nextLevel }}; --visual-counter-maxValue: {{ getCalculatedPointsLeft(subject.earnedPoints, subject.lostPoints, subject.nextLevel) }};"></h1>
+										<p class="text-xs text-center text-gray-500 leading-none">zbývá do další úrovně</p>
+									</div>
+								</div>
+								<svg class="circle-progress">
+									<circle cx="57" cy="57" r="52" class="circle-progress-bg" />
+									<circle cx="57" cy="57" r="52" class="circle-progress-meter" style="--value: {{ getCalculatedPointsLeftInDegrees(subject.earnedPoints - subject.lostPoints, subject.nextLevel) }}" />
+								</svg>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mt-4">
+				<div class="mt-4">
+					<div class="">
+						<h1 class="text-heading-lines text-lg font-semibold tracking-widest">Výpis</h1>
+					</div>
+					<div class="">
+						<div *ngFor="let subject of subjects" class="flex p-4 border-b-2 border-b-gray-200">
+							<div class="">
+								<p class="font-bold leading-none">Salmon</p>
+								<p class="text-xs text-gray-500">24.04.2022 13:12</p>
+							</div>
+							<div class="grid ml-auto">
+								<div class="my-auto">+45 EXP</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

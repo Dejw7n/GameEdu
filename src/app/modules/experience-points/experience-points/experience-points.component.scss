@@ -1,0 +1,84 @@
+.text-heading-lines {
+	text-align: center;
+	max-width: 600px;
+	position: relative;
+}
+.text-heading-lines:before {
+	content: "";
+	display: block;
+	width: 130px;
+	height: 2px;
+	background: #000000;
+	left: 0;
+	top: 50%;
+	position: absolute;
+}
+.text-heading-lines:after {
+	content: "";
+	display: block;
+	width: 130px;
+	height: 2px;
+	background: #000000;
+	right: 0;
+	top: 50%;
+	position: absolute;
+}
+/*animating number counter*/
+@property --num {
+	syntax: "<integer>";
+	initial-value: 0;
+	inherits: false;
+}
+
+.visual-counter {
+	animation: counter 1s;
+	animation-fill-mode: forwards;
+	counter-reset: num var(--num);
+}
+.visual-counter::after {
+	content: counter(num);
+}
+
+@keyframes counter {
+	from {
+		--num: var(--visual-counter-minValue);
+	}
+	to {
+		--num: var(--visual-counter-maxValue);
+	}
+}
+/*circle*/
+.circle-progress {
+	width: 114px;
+	height: 114px;
+}
+
+.circle-progress-bg {
+	fill: none;
+	stroke-width: 5px;
+	stroke: #e7eaff;
+}
+
+.circle-progress-meter {
+	fill: none;
+	stroke-width: 10px;
+	stroke-linecap: round;
+	transform: rotate(-90deg);
+	transform-origin: 50% 50%;
+}
+
+.circle-progress-meter {
+	stroke-dasharray: 360;
+	stroke-dashoffset: var(--value);
+	stroke: #3261e0;
+	animation: progress 1s ease-out;
+}
+
+@keyframes progress {
+	from {
+		stroke-dashoffset: 360;
+	}
+	to {
+		stroke-dashoffset: var(--value);
+	}
+}
