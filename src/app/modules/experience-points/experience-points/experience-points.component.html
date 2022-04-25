@@ -1,5 +1,5 @@
 <div class="mb-8">
-	<h1 class="text-3xl text-black font-bold">Výukové body</h1>
+	<h1 class="text-3xl text-black font-bold">Zkušenostní body</h1>
 </div>
 <div class="">
 	<div class="mb-4">
@@ -14,19 +14,19 @@
 							<div class="">
 								<h1 class="text-xl font-semibold">{{ subject.name }}</h1>
 							</div>
-							<div class="mt-auto flex">
+							<div class="grid grid-cols-2 mt-auto">
 								<div class="pl-2 border-l-2 border-l-blue-400">
 									<span class="text-sm text-gray-500">Získál si</span>
 									<div class="flex">
-										<span class="mt-auto text-2xl font-semibold leading-none tracking-wide">{{ subject.earnedPoints }}</span>
-										<span class="mt-auto ml-1 text-xs text-gray-600">bodů</span>
+										<span class="mt-auto text-2xl font-semibold leading-none tracking-wide">{{ subject.earnedXP }}</span>
+										<span class="mt-auto ml-1 text-xs text-gray-600">XP</span>
 									</div>
 								</div>
-								<div class="ml-auto pl-2 border-l-2 border-l-red-400">
+								<div class="pl-2 border-l-2 border-l-red-400">
 									<span class="text-sm text-gray-500">Ztratil si</span>
 									<div class="flex">
-										<span class="mt-auto text-2xl font-semibold leading-none tracking-wide">{{ subject.lostPoints }}</span>
-										<span class="mt-auto ml-1 text-xs text-gray-600">bodů</span>
+										<span class="mt-auto text-2xl font-semibold leading-none tracking-wide">{{ subject.lostXP }}</span>
+										<span class="mt-auto ml-1 text-xs text-gray-600">XP</span>
 									</div>
 								</div>
 							</div>
@@ -35,13 +35,13 @@
 							<div class="relative my-auto">
 								<div class="absolute grid w-full h-full">
 									<div class="m-auto">
-										<h1 class="visual-counter text-2xl text-center text-blue-600 font-semibold leading-none tracking-wide" style="--visual-counter-minValue: {{ subject.nextLevel }}; --visual-counter-maxValue: {{ getCalculatedPointsLeft(subject.earnedPoints, subject.lostPoints, subject.nextLevel) }};"></h1>
+										<h1 class="visual-counter text-2xl text-center text-blue-600 font-semibold leading-none tracking-wide" style="--visual-counter-minValue: {{ subject.nextLevel }}; --visual-counter-maxValue: {{ getCalculatedXPLeft(subject.earnedXP, subject.lostXP, subject.nextLevel) }};"></h1>
 										<p class="text-xs text-center text-gray-500 leading-none">zbývá do další úrovně</p>
 									</div>
 								</div>
 								<svg class="circle-progress">
 									<circle cx="57" cy="57" r="52" class="circle-progress-bg" />
-									<circle cx="57" cy="57" r="52" class="circle-progress-meter" style="--value: {{ getCalculatedPointsLeftInDegrees(subject.earnedPoints - subject.lostPoints, subject.nextLevel) }}" />
+									<circle cx="57" cy="57" r="52" class="circle-progress-meter" style="--value: {{ getCalculatedXPLeftInDegrees(subject.earnedXP - subject.lostXP, subject.nextLevel) }}" />
 								</svg>
 							</div>
 						</div>
@@ -56,11 +56,14 @@
 					<div class="">
 						<div *ngFor="let subject of subjects" class="flex p-4 border-b-2 border-b-gray-200">
 							<div class="">
-								<p class="font-bold leading-none">Salmon</p>
+								<p class="font-bold leading-none">Aktivita</p>
 								<p class="text-xs text-gray-500">24.04.2022 13:12</p>
 							</div>
 							<div class="grid ml-auto">
-								<div class="my-auto">+45 EXP</div>
+								<div class="my-auto">
+									<span class="text-base text-green-600 font-semibold">+45 XP</span>
+									<span class="text-base text-red-600 font-semibold">-45 XP</span>
+								</div>
 							</div>
 						</div>
 					</div>

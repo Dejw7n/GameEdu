@@ -1,12 +1,12 @@
 .text-heading-lines {
 	text-align: center;
-	max-width: 600px;
 	position: relative;
 }
 .text-heading-lines:before {
 	content: "";
 	display: block;
-	width: 130px;
+	width: 30%;
+	max-width: 130px;
 	height: 2px;
 	background: #000000;
 	left: 0;
@@ -16,7 +16,8 @@
 .text-heading-lines:after {
 	content: "";
 	display: block;
-	width: 130px;
+	width: 30%;
+	max-width: 130px;
 	height: 2px;
 	background: #000000;
 	right: 0;

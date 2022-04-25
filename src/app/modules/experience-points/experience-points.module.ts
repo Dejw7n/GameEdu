@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { ExperiencePointsComponent } from "./learning-points/experience-points.component";
+import { ExperiencePointsComponent } from "./experience-points/experience-points.component";
 
 @NgModule({
 	declarations: [ExperiencePointsComponent],
