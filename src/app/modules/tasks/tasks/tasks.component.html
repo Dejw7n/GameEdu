@@ -1,0 +1,51 @@
+<div class="mb-8">
+	<h1 class="text-3xl text-black font-bold">Úkoly</h1>
+</div>
+<div class="">
+	<div class="mb-4">
+		<h1 class="text-lg font-semibold">Následující úkoly</h1>
+	</div>
+	<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+		<div *ngFor="let task of tasks" class="">
+			<div class="p-4 rounded-tl-lg rounded-tr-8xl bg-gradient-to-br from-blue-500 to-blue-600">
+				<div class="w-4/5">
+					<p class="text-base text-white">{{ task.title }}</p>
+				</div>
+			</div>
+			<div class="px-4 pt-2 pb-4 bg-white">
+				<div [ngClass]="{ 'bg-red-500 text-white': task.required == true }" class="flex h-6 mt-2">
+					<div [ngClass]="{ 'filter-white': task.required == true }" class="mr-2">
+						<img src="/assets/media/icons/black/asterisk-2.png" alt="" class="w-6 h-6" />
+					</div>
+					<div class="first-letter:capitalize">
+						<span *ngIf="task.required == true" class="">povinné, </span>
+						<span class="">vyžadované nahrání přílohy</span>
+					</div>
+				</div>
+				<div class="flex h-6 mt-2">
+					<div class="mr-2">
+						<img src="/assets/media/icons/black/chronometer-2.png" alt="" class="w-6 h-6" />
+					</div>
+					<span class="">Odhadovaný čas práce na 1h 8m</span>
+				</div>
+				<div class="flex h-6 mt-2">
+					<div class="mr-2">
+						<img src="/assets/media/icons/black/power.png" alt="" class="w-6 h-6" />
+					</div>
+					<div class="">
+						<span class="">Získáš 45 XP</span>
+						<span *ngIf="task.required == true" class="ml-1 text-sm text-white bg-red-500">(za nesplnění přijdeš o XP)</span>
+					</div>
+				</div>
+			</div>
+			<div class="rounded-br-lg rounded-bl-lg border-t-2 border-gray-100 bg-white">
+				<a href="">
+					<div class="py-4">
+						<p class="text-base text-center text-blue-600 font-semibold">Zobrazit úkol</p>
+						<p [ngClass]="{ 'text-white bg-red-500': task.required == true }" class="text-sm text-center font-semibold">Deadline do 24.04.2022</p>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

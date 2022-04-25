@@ -6,10 +6,11 @@ import { AppComponent } from "./app.component";
 
 import { HomeModule } from "./modules/home/home.module";
 import { ExperiencePointsModule } from "./modules/experience-points/experience-points.module";
+import { TasksModule } from "./modules/tasks/tasks.module";
 
 @NgModule({
 	declarations: [AppComponent],
-	imports: [BrowserModule, AppRoutingModule, HomeModule, ExperiencePointsModule],
+	imports: [BrowserModule, AppRoutingModule, HomeModule, ExperiencePointsModule, TasksModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })
